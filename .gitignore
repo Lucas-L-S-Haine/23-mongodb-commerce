@@ -5,5 +5,5 @@
 .vscode
 
 # BSON data files
-assets/produtos.bson
+assets/**/produtos.bson
 node_modules
