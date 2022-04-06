@@ -1,15 +1,15 @@
 db.produtos.updateMany({}, { $set: { vendasPorDia: [0, 0, 0, 0, 0, 0, 0] } });
 db.produtos.updateOne(
   { nome: "Big Mac" },
-  { $inc: { "vendasPorDia.4": 60 } },
+  { $inc: { "vendasPorDia.3": 60 } },
 );
-db.produtos.updateOne(
+db.produtos.updateMany(
   {
     $and: [
       { tags: { $exists: true } },
       { tags: { $in: ["bovino"] } },
     ],
   },
-  { $inc: { "vendasPorDia.7": 120 } },
+  { $inc: { "vendasPorDia.6": 120 } },
 );
 db.produtos.find({}, { _id: false, nome: true, vendasPorDia: true });
