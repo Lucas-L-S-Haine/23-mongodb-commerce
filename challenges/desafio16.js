@@ -1,1 +1,8 @@
-db.produtos.countDocuments({ ingredientes: { $size: 4 } });
+db.produtos.updateOne(
+  { nome: "Big Mac" },
+  { $currentDate: { ultimaModificacao: { $type: "date" } } },
+);
+db.produtos.find(
+  { ultimaModificacao: { $exists: true } },
+  { _id: false, nome: true },
+);
